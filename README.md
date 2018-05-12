@@ -6,6 +6,12 @@ that's it!
 
 
 ```bash 
-cd ~/src/qlstudent;ng build --aot=true --target=production --environment=prod --build-optimizer --verbose;rsync -av /home/qlstudent/src/qlstudent/dist/ /home/qlstudent/src/site;cd /home/qlstudent/src/site/qlstudent/;git add .;git commit -S;git push origin master;
+cd ~/src/qlstudent;
+ng build --aot=true --prod --build-optimizer --verbose --progress=true --deploy-url="qlstudent.github.io" --delete-output-path --extract-licenses --subresource-integrity --stats-json;
+rsync -av /home/qlstudent/src/qlstudent/dist/ /home/qlstudent/src/site;
+cd /home/qlstudent/src/site/qlstudent/;
+git add .;
+git commit -S;
+git push origin master;
 ```
 
